@@ -1,0 +1,67 @@
+public class changeCase {    
+    public static void main(String[] args) {    
+            
+        String str1="People matter. Results count";    
+        StringBuffer newStr=new StringBuffer(str1);    
+        
+        System.out.println("Original String: " + str1);
+        System.out.print(System.lineSeparator());
+        System.out.print(System.lineSeparator());
+
+       System.out.println("\nString in Upper case : \n" + str1.toUpperCase()); 
+
+       System.out.println("String in lower case : \n" + str1.toLowerCase());
+            System.out.print(System.lineSeparator());
+
+     
+     String words[]=str1.split("\\s");
+        String newString ="";
+        
+        for(String w: words){
+            String first = w.substring(0,1);      //First Letter
+            String rest = w.substring(1);         //Rest of the letters
+        
+            //Concatenete and reassign after 
+            //converting the first letter to uppercase
+            newString+=first.toUpperCase()+ rest+ " ";  
+        }  
+    
+        //trim to remove the last redundant blank space
+        System.out.print(System.lineSeparator());
+                System.out.print(System.lineSeparator());
+
+        System.out.println("\nString in Capitalize: ");
+        System.out.println(newString.trim());
+     
+     
+        // get First letter of the string
+        String firstLetStr = str1.substring(0, 1);
+        // Get remaining letter using substring
+        String remLetStr = str1.substring(1);
+ 
+        // convert the first letter of String to uppercase
+        firstLetStr = firstLetStr.toUpperCase();
+ 
+        // concantenate the first letter and remaining string
+        String firstLetterCapitalizedName = firstLetStr + remLetStr;
+        System.out.println("\nString in sentence case: \n" + firstLetterCapitalizedName);
+        
+               for(int i = 0; i < str1.length(); i++) {    
+                
+            //Checks for lower case character    
+            if(Character.isLowerCase(str1.charAt(i))) {    
+                //Convert it into upper case using toUpperCase() function    
+                newStr.setCharAt(i, Character.toUpperCase(str1.charAt(i)));    
+            }    
+            //Checks for upper case character    
+            else if(Character.isUpperCase(str1.charAt(i))) {    
+                //Convert it into upper case using toLowerCase() function    
+                newStr.setCharAt(i, Character.toLowerCase(str1.charAt(i)));    
+            }    
+            
+        }   
+            
+         System.out.println("String after Invert : \n" + newStr);
+           
+    }    
+}     
